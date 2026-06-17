@@ -1,29 +1,34 @@
-# GoDaddy DNS for ortizventureholdings.com
+# Permanent GoDaddy DNS for ortizventureholdings.com
 
-Use these records after the site is deployed to Netlify.
+The site is permanently hosted with GitHub Pages:
 
-## Records
+https://github.com/fortiz772/ortiz-venture-holdings-site
+
+## Required DNS records
 
 | Type | Name | Value |
 |---|---|---|
-| A | @ | 75.2.60.5 |
-| CNAME | www | your-netlify-site-name.netlify.app |
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| CNAME | www | fortiz772.github.io |
 
-Replace `your-netlify-site-name.netlify.app` with the exact Netlify URL for the deployed site.
+## GoDaddy status
 
-## GoDaddy steps
-
-1. Open GoDaddy.
-2. Go to My Products.
-3. Select `ortizventureholdings.com`.
-4. Open DNS Management.
-5. Add or update the records above.
-6. Remove conflicting parked-domain A records if GoDaddy shows old default records.
-7. Save changes.
-
-After DNS updates, go back to Netlify and add:
+Forwarding has been removed for:
 
 - `ortizventureholdings.com`
 - `www.ortizventureholdings.com`
 
-Then set `ortizventureholdings.com` as the primary domain and enable HTTPS.
+The GitHub Pages records above have been added.
+
+## GitHub Pages status
+
+GitHub Pages custom domain:
+
+`ortizventureholdings.com`
+
+GitHub may need time to issue the HTTPS certificate after DNS changes. When the certificate is ready, enable HTTPS enforcement in the GitHub Pages settings.
+
+DNS changes commonly work within minutes, but can take up to 48 hours globally.
