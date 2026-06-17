@@ -129,6 +129,8 @@
       body.menu-open { overflow: hidden; }
       button, input, textarea { font: inherit; }
       a { color: inherit; text-decoration: none; }
+      .hero-new-badge,
+      [data-hero-new-badge] { display: none !important; }
       .font-luxury { font-family: "Instrument Serif", serif; font-style: italic; letter-spacing: 0; }
       .liquid-glass {
         background: rgba(255,255,255,0.45);
@@ -836,8 +838,8 @@
             <div className="wave-grid"></div>
             <div className="mx-auto grid min-h-[calc(100vh-7rem)] max-w-7xl items-center gap-10 py-10 lg:grid-cols-[1fr_.95fr] lg:py-20">
               <div className="relative z-10 text-center lg:text-left">
-                <motion.div initial={{ opacity: 0, filter: "blur(14px)", y: 16 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} transition={{ duration: .75, delay: .18 }} className="liquid-glass mx-auto mb-7 inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm font-bold text-slate-700 lg:mx-0">
-                  <span>Ortiz Venture Holdings LLC builds intelligent business platforms</span>
+                <motion.div initial={{ opacity: 0, filter: "blur(14px)", y: 16 }} animate={{ opacity: 1, filter: "blur(0px)", y: 0 }} transition={{ duration: .75, delay: .18 }} className="liquid-glass mx-auto mb-7 inline-flex max-w-full items-center justify-center rounded-full px-5 py-3 text-center text-base font-black text-slate-950 shadow-xl shadow-cyan-100/70 sm:text-lg lg:mx-0">
+                  <span>We create websites, stores, and phone apps.</span>
                 </motion.div>
                 <h1 className="font-luxury mx-auto max-w-5xl text-5xl leading-[.9] text-slate-950 md:text-7xl lg:mx-0 lg:text-[5.5rem]">
                   <BlurText text="Turn Business Data Into Intelligent Action" />
