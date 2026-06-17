@@ -209,6 +209,157 @@
         pointer-events: auto;
         transform: translateY(0) scale(1);
       }
+      .theme-scene {
+        position: relative;
+        min-height: 320px;
+        overflow: hidden;
+        border-radius: 28px;
+        background:
+          radial-gradient(circle at 22% 18%, rgba(34,211,238,.42), transparent 28%),
+          radial-gradient(circle at 80% 24%, rgba(16,185,129,.24), transparent 26%),
+          linear-gradient(135deg, #04101d 0%, #071827 48%, #020713 100%);
+        isolation: isolate;
+      }
+      .theme-scene::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(rgba(125,211,252,.15) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(125,211,252,.13) 1px, transparent 1px);
+        background-size: 34px 34px;
+        transform: perspective(620px) rotateX(58deg) translateY(18%);
+        transform-origin: bottom;
+        opacity: .72;
+        animation: grid-drift 15s linear infinite;
+        mask-image: linear-gradient(transparent, #000 35%, transparent);
+      }
+      .theme-scene::after {
+        content: "";
+        position: absolute;
+        inset: -20%;
+        background: conic-gradient(from 180deg, transparent, rgba(34,211,238,.16), transparent, rgba(16,185,129,.12), transparent);
+        animation: spin 36s linear infinite;
+        opacity: .8;
+      }
+      .scene-glow {
+        position: absolute;
+        inset: 12%;
+        border-radius: 999px;
+        background: radial-gradient(circle, rgba(34,211,238,.28), transparent 62%);
+        filter: blur(16px);
+        z-index: 1;
+      }
+      .scene-core {
+        position: absolute;
+        left: 50%;
+        top: 48%;
+        z-index: 3;
+        width: 128px;
+        height: 128px;
+        transform: translate(-50%, -50%);
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,.42);
+        background: radial-gradient(circle at 35% 25%, rgba(255,255,255,.9), rgba(34,211,238,.34) 30%, rgba(3,7,18,.22) 62%);
+        box-shadow: 0 0 45px rgba(34,211,238,.34), inset 0 1px 24px rgba(255,255,255,.26);
+      }
+      .scene-core::before,
+      .scene-core::after {
+        content: "";
+        position: absolute;
+        inset: -18px;
+        border-radius: inherit;
+        border: 1px solid rgba(125,211,252,.42);
+      }
+      .scene-core::after {
+        inset: -36px;
+        border-color: rgba(16,185,129,.28);
+        animation: spin 18s linear infinite reverse;
+      }
+      .scene-panel {
+        position: absolute;
+        z-index: 4;
+        width: 132px;
+        border: 1px solid rgba(255,255,255,.28);
+        border-radius: 18px;
+        background: rgba(255,255,255,.14);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        box-shadow: 0 18px 45px rgba(0,0,0,.22);
+        padding: 12px;
+        color: #ecfeff;
+        animation: float-soft 7s ease-in-out infinite;
+      }
+      .scene-panel strong {
+        display: block;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: .16em;
+        color: #a5f3fc;
+      }
+      .scene-panel span {
+        display: block;
+        margin-top: 8px;
+        height: 6px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #22D3EE, #10B981);
+      }
+      .scene-panel.one { left: 6%; top: 12%; }
+      .scene-panel.two { right: 7%; top: 18%; animation-delay: -2s; }
+      .scene-panel.three { left: 12%; bottom: 12%; animation-delay: -4s; }
+      .scene-bars {
+        position: absolute;
+        bottom: 16%;
+        left: 50%;
+        z-index: 2;
+        display: flex;
+        align-items: end;
+        gap: 8px;
+        transform: translateX(-50%);
+      }
+      .scene-bars i {
+        display: block;
+        width: 18px;
+        border-radius: 9px 9px 2px 2px;
+        background: linear-gradient(180deg, rgba(34,211,238,.95), rgba(14,165,233,.22));
+        box-shadow: 0 0 22px rgba(34,211,238,.32);
+      }
+      .scene-bars i:nth-child(1) { height: 58px; }
+      .scene-bars i:nth-child(2) { height: 92px; }
+      .scene-bars i:nth-child(3) { height: 138px; }
+      .scene-bars i:nth-child(4) { height: 108px; }
+      .scene-bars i:nth-child(5) { height: 76px; }
+      .theme-scene.digital-empire .scene-bars i { width: 24px; background: linear-gradient(180deg, #e0f2fe, #0EA5E9 55%, rgba(14,165,233,.1)); }
+      .theme-scene.infinite-horizon {
+        background:
+          radial-gradient(circle at 50% 38%, rgba(255,255,255,.8), transparent 16%),
+          linear-gradient(180deg, #dff8ff 0%, #8bdff0 35%, #0f5d78 58%, #071827 100%);
+      }
+      .theme-scene.infinite-horizon::before { transform: perspective(620px) rotateX(72deg) translateY(24%); opacity: .44; }
+      .theme-scene.quantum-vault,
+      .theme-scene.black-diamond {
+        background:
+          radial-gradient(circle at 50% 44%, rgba(34,211,238,.48), transparent 20%),
+          linear-gradient(135deg, #020409, #071827 48%, #000000);
+      }
+      .theme-scene.orion-protocol {
+        background:
+          radial-gradient(circle at 78% 25%, rgba(255,255,255,.86), rgba(14,165,233,.26) 18%, transparent 30%),
+          radial-gradient(circle at 15% 75%, rgba(34,211,238,.28), transparent 26%),
+          linear-gradient(135deg, #000814, #031525 62%, #061c2b);
+      }
+      .theme-scene.ai-foundry {
+        background:
+          radial-gradient(circle at 26% 24%, rgba(16,185,129,.34), transparent 27%),
+          linear-gradient(135deg, #071827, #082f49 52%, #020617);
+      }
+      .theme-scene.neural-network .scene-core {
+        background: radial-gradient(circle, #ffffff, #22D3EE 30%, #0EA5E9 62%, rgba(2,6,23,.3));
+      }
+      @keyframes float-soft {
+        0%, 100% { transform: translate3d(0,0,0); }
+        50% { transform: translate3d(0,-14px,0); }
+      }
       @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after {
           animation-duration: .01ms !important;
@@ -230,6 +381,7 @@
         ["Home", "home"],
         ["Products", "products"],
         ["Analytics", "analytics"],
+        ["Visuals", "visuals"],
         ["Services", "services"],
         ["Company", "company"],
         ["Contact", "contact"]
@@ -316,6 +468,63 @@
         {
           role: "Operations dashboard brief",
           quote: "We need cleaner reports, less spreadsheet work, and a simple dashboard that managers can understand in seconds."
+        }
+      ];
+
+      const cinematicAssets = [
+        {
+          title: "Digital Empire",
+          scene: "digital-empire",
+          background: "Futuristic global city, massive skyscrapers, light highways, and AI data flowing between buildings.",
+          elements: ["Analytics dashboards", "Revenue charts", "Growth indicators", "Market data streams"]
+        },
+        {
+          title: "AI Command Nexus",
+          scene: "ai-command-nexus",
+          background: "Holographic control room with floating AI screens, neural data streams, radar systems, and command panels.",
+          elements: ["AI modules", "Analytics rings", "Radar systems", "Command panels"]
+        },
+        {
+          title: "Infinite Horizon",
+          scene: "infinite-horizon",
+          background: "Endless ocean horizon with futuristic structures, sunrise lighting, atmospheric fog, and reflection effects.",
+          elements: ["Glass info panels", "Floating navigation", "Holographic projections", "Reflection layers"]
+        },
+        {
+          title: "Quantum Vault",
+          scene: "quantum-vault",
+          background: "Massive digital vault in a premium finance environment with luxury black surfaces and a blue energy core.",
+          elements: ["Security analytics", "Portfolio dashboards", "Market intelligence", "Vault HUD"]
+        },
+        {
+          title: "Innovation Grid",
+          scene: "innovation-grid",
+          background: "Infinite digital grid with connected nodes, AI network visualization, data highways, and growth pathways.",
+          elements: ["Product cards", "Connection diagrams", "Growth pathways", "Network nodes"]
+        },
+        {
+          title: "Orion Protocol",
+          scene: "orion-protocol",
+          background: "Orbital command station with planetary views, deep-space visuals, and spacecraft-style control systems.",
+          elements: ["Navigation displays", "Mission analytics", "Aerospace HUD", "Orbit maps"]
+        },
+        {
+          title: "Black Diamond",
+          scene: "black-diamond",
+          background: "Luxury black crystal environment with reflective surfaces, premium lighting, and high-end corporate atmosphere.",
+          elements: ["Floating glass cards", "Luxury metrics", "Elegant data", "Crystal reflections"]
+        },
+        {
+          title: "AI Foundry",
+          scene: "ai-foundry",
+          background: "Digital manufacturing environment with AI-powered creation systems and product development visuals.",
+          elements: ["Design systems", "Build pipelines", "Launch dashboards", "Assembly flow"]
+        },
+        {
+          title: "Neural Network",
+          scene: "neural-network",
+          background: "Massive AI neural network with connected intelligence nodes and electric blue machine-learning streams.",
+          elements: ["Brain structures", "Prediction systems", "AI analytics", "Intelligence maps"]
         }
       ];
 
@@ -773,6 +982,75 @@
         );
       }
 
+      function CinematicScene({ asset, featured = false }) {
+        const panelLabels = featured ? ["Global Network", "AI Command", "Software Ecosystem"] : asset.elements.slice(0, 3);
+        return (
+          <div className={`theme-scene ${asset.scene}`}>
+            <div className="scene-glow"></div>
+            <div className="scene-core"></div>
+            <div className="scene-bars" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i>
+            </div>
+            {panelLabels.map((label, index) => (
+              <div key={label} className={`scene-panel ${index === 0 ? "one" : index === 1 ? "two" : "three"}`}>
+                <strong>{label}</strong>
+                <span style={{ width: `${86 - index * 13}%` }}></span>
+              </div>
+            ))}
+          </div>
+        );
+      }
+
+      function AssetLibrary() {
+        return (
+          <section id="visuals" className="relative overflow-hidden bg-white px-4 py-24 sm:px-6 lg:px-8">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_12%,rgba(14,165,233,.14),transparent_26%),radial-gradient(circle_at_88%_24%,rgba(34,211,238,.13),transparent_28%),linear-gradient(180deg,#ffffff,#f7fbff)]"></div>
+            <div className="relative mx-auto max-w-7xl">
+              <motion.div initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .28 }} transition={{ duration: .7 }} className="mx-auto max-w-4xl text-center">
+                <p className="font-black uppercase tracking-[.24em] text-sky-600">// Image Asset Library</p>
+                <h2 className="font-luxury mt-4 text-5xl leading-[.95] text-slate-950 md:text-7xl">Cinematic systems for a digital empire.</h2>
+                <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">Original visual directions for Ortiz Venture Holdings LLC, built as live animated scenes with liquid glass UI, holographic dashboards, blue and cyan lighting, and responsive motion.</p>
+              </motion.div>
+
+              <motion.article initial={{ opacity: 0, y: 36 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ duration: .75 }} className="liquid-glass-strong mt-14 grid gap-6 rounded-[36px] p-4 sm:p-6 lg:grid-cols-[1.12fr_.88fr] lg:items-center">
+                <CinematicScene featured asset={{
+                  title: "Ortiz Venture Holdings",
+                  scene: "ai-command-nexus",
+                  elements: ["AI command center", "Business analytics", "Global network"]
+                }} />
+                <div className="p-3 sm:p-6">
+                  <span className="inline-flex rounded-full bg-slate-950 px-4 py-2 text-xs font-black uppercase tracking-[.2em] text-cyan-100">Ortiz Venture Holdings Ecosystem</span>
+                  <h3 className="font-luxury mt-6 text-5xl leading-[.92] text-slate-950 md:text-6xl">AI command center meets business software network.</h3>
+                  <p className="mt-6 text-lg leading-8 text-slate-600">A combined visual language for MarketPulse IQ, TipPulse Manager, CaseWorth AI, and future platforms: command center energy, analytics intelligence, global reach, and premium software polish.</p>
+                  <div className="mt-7 flex flex-wrap gap-2">
+                    {["MarketPulse IQ", "TipPulse Manager", "CaseWorth AI", "Future Ventures"].map(item => (
+                      <span key={item} className="rounded-full border border-sky-100 bg-white/75 px-4 py-2 text-sm font-black text-sky-700">{item}</span>
+                    ))}
+                  </div>
+                </div>
+              </motion.article>
+
+              <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                {cinematicAssets.map((asset, index) => (
+                  <motion.article key={asset.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .18 }} transition={{ duration: .62, delay: index * .04 }} whileHover={{ y: -10, scale: 1.01 }} className="liquid-glass-strong overflow-hidden rounded-[32px] p-4">
+                    <CinematicScene asset={asset} />
+                    <div className="p-3 pt-6">
+                      <h3 className="text-2xl font-black text-slate-950">{asset.title}</h3>
+                      <p className="mt-3 min-h-[104px] text-sm leading-6 text-slate-600">{asset.background}</p>
+                      <div className="mt-5 flex flex-wrap gap-2">
+                        {asset.elements.map(element => (
+                          <span key={element} className="rounded-full bg-sky-50 px-3 py-1 text-xs font-black text-sky-700">{element}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.article>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      }
+
       function Testimonials() {
         return (
           <section className="bg-white px-4 py-24 sm:px-6 lg:px-8">
@@ -912,6 +1190,7 @@
               <PlatformShowcase />
               <Platforms />
               <Analytics />
+              <AssetLibrary />
               <Services />
               <Testimonials />
               <Company />
