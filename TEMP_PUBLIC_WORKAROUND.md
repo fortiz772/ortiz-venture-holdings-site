@@ -1,32 +1,19 @@
-# Temporary Public Website Workaround
+# Public Website Fallback
 
-The site is currently reachable through this temporary public tunnel:
+The site no longer depends on a local Mac, localhost, or a temporary tunnel.
 
-https://41dde2ce1288b7.lhr.life
+Permanent custom domain:
 
-This works only while both of these processes keep running on this Mac:
+https://www.ortizventureholdings.com
 
-- the local website server on port 4173
-- the SSH tunnel session
+Independent fallback URL:
 
-## GoDaddy forwarding workaround
+https://fortiz772.github.io/ortiz-venture-holdings-live/
 
-In GoDaddy, you can temporarily forward:
+Use the fallback URL only if a device or network still has stale GoDaddy DNS cache and temporarily shows the old forwarding error.
 
-- `ortizventureholdings.com`
-- `www.ortizventureholdings.com`
+## Permanent GoDaddy setup
 
-to:
+The permanent DNS records are documented in `GO_DADDY_DNS.md`.
 
-https://41dde2ce1288b7.lhr.life
-
-Use forwarding type:
-
-- Permanent 301 if you want search engines to treat it as the current address
-- Temporary 302 if this is only for testing
-
-## Important
-
-This is not a permanent hosting setup. If the Mac sleeps, restarts, loses internet, or the tunnel closes, the public link stops working.
-
-For a permanent website, deploy the zip file to Netlify and use the DNS records in `GO_DADDY_DNS.md`.
+Do not re-enable GoDaddy forwarding unless you intentionally want to replace the clean GitHub Pages DNS setup.
