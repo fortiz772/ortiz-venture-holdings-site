@@ -27,8 +27,11 @@ The GitHub Pages records above have been added.
 
 GitHub Pages custom domain:
 
-`ortizventureholdings.com`
+`www.ortizventureholdings.com`
 
-GitHub may need time to issue the HTTPS certificate after DNS changes. When the certificate is ready, enable HTTPS enforcement in the GitHub Pages settings.
+GitHub Pages HTTPS is enabled. The certificate covers both:
+
+- `www.ortizventureholdings.com`
+- `ortizventureholdings.com`
 
 DNS changes commonly work within minutes, but can take up to 48 hours globally.
