@@ -16,6 +16,8 @@
     <meta name="twitter:description" content="Bright AI analytics platforms for modern business operations.">
     <meta name="twitter:image" content="https://www.ortizventureholdings.com/assets/hero-technology.png">
     <link rel="canonical" href="https://www.ortizventureholdings.com/">
+    <link rel="preload" as="image" href="assets/hero-technology.png">
+    <link rel="preload" as="image" href="assets/about-dashboard.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
@@ -678,6 +680,34 @@
                 <h2 className="mt-5 text-4xl font-black leading-tight text-slate-950 md:text-6xl">AI-Powered Platforms Built for <span className="bg-gradient-to-r from-sky-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">Business Growth</span></h2>
                 <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">Explore a portfolio of modern web, mobile, ecommerce, and AI-driven software concepts developed under Ortiz Venture Holdings LLC.</p>
               </motion.div>
+              <div className="mt-12 grid gap-5 lg:grid-cols-[1.12fr_.88fr]">
+                <motion.figure initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .22 }} transition={{ duration: .7 }} whileHover={{ y: -8, scale: 1.01 }} className="liquid-glass-strong overflow-hidden rounded-[32px] p-3">
+                  <img
+                    src="assets/hero-technology.png"
+                    alt="Ortiz Venture Holdings futuristic AI analytics workspace with dashboard visuals"
+                    className="h-[300px] w-full rounded-[24px] object-cover shadow-2xl shadow-sky-200/60 sm:h-[390px]"
+                    loading="eager"
+                    decoding="async"
+                  />
+                  <figcaption className="flex flex-wrap items-center justify-between gap-3 px-3 py-4">
+                    <span className="text-sm font-black uppercase tracking-[.2em] text-sky-700">Live Platform Visual</span>
+                    <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-black text-emerald-700">Public asset</span>
+                  </figcaption>
+                </motion.figure>
+                <motion.figure initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .22 }} transition={{ duration: .7, delay: .08 }} whileHover={{ y: -8, scale: 1.01 }} className="liquid-glass-strong overflow-hidden rounded-[32px] p-3">
+                  <img
+                    src="assets/about-dashboard.png"
+                    alt="Premium Ortiz Venture Holdings dashboard office preview"
+                    className="h-[300px] w-full rounded-[24px] object-cover shadow-2xl shadow-cyan-200/50 sm:h-[390px]"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption className="flex flex-wrap items-center justify-between gap-3 px-3 py-4">
+                    <span className="text-sm font-black uppercase tracking-[.2em] text-sky-700">Dashboard Preview</span>
+                    <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-black text-sky-700">Optimized PNG</span>
+                  </figcaption>
+                </motion.figure>
+              </div>
               <div className="mt-12 grid gap-5 lg:grid-cols-4">
                 {showcaseCards.map((card, index) => (
                   <motion.article key={card.title} initial={{ opacity: 0, y: 35 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .18 }} transition={{ duration: .68, delay: index * .08 }} whileHover={{ y: -10, scale: 1.012 }} className="liquid-glass-strong group rounded-[28px] p-4">
