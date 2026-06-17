@@ -4,6 +4,14 @@ The site is permanently hosted with GitHub Pages:
 
 https://github.com/fortiz772/ortiz-venture-holdings-site
 
+Live custom domain:
+
+https://www.ortizventureholdings.com
+
+Public fallback URL that does not use GoDaddy DNS:
+
+https://fortiz772.github.io/ortiz-venture-holdings-live/
+
 ## Required DNS records
 
 | Type | Name | Value |
@@ -35,3 +43,5 @@ GitHub Pages HTTPS is enabled. The certificate covers both:
 - `ortizventureholdings.com`
 
 DNS changes commonly work within minutes, but can take up to 48 hours globally.
+
+If a device still shows an old GoDaddy forwarding error, that device or network is using stale DNS cache. The records above are the permanent setup.
