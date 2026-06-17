@@ -220,10 +220,34 @@
           linear-gradient(135deg, #04101d 0%, #071827 48%, #020713 100%);
         isolation: isolate;
       }
+      .theme-scene > img {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(1.08) contrast(1.05);
+        transform: scale(1.02);
+        transition: transform .7s ease, filter .7s ease;
+      }
+      .theme-scene:hover > img {
+        transform: scale(1.08);
+        filter: saturate(1.18) contrast(1.08) brightness(.95);
+      }
+      .theme-scene .image-shade {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background:
+          linear-gradient(180deg, rgba(2,6,23,.18), rgba(2,6,23,.68)),
+          radial-gradient(circle at 50% 42%, rgba(34,211,238,.20), transparent 36%);
+      }
       .theme-scene::before {
         content: "";
         position: absolute;
         inset: 0;
+        z-index: 2;
         background:
           linear-gradient(rgba(125,211,252,.15) 1px, transparent 1px),
           linear-gradient(90deg, rgba(125,211,252,.13) 1px, transparent 1px);
@@ -238,6 +262,7 @@
         content: "";
         position: absolute;
         inset: -20%;
+        z-index: 2;
         background: conic-gradient(from 180deg, transparent, rgba(34,211,238,.16), transparent, rgba(16,185,129,.12), transparent);
         animation: spin 36s linear infinite;
         opacity: .8;
@@ -475,54 +500,63 @@
         {
           title: "Digital Empire",
           scene: "digital-empire",
+          image: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1600&q=85",
           background: "Futuristic global city, massive skyscrapers, light highways, and AI data flowing between buildings.",
           elements: ["Analytics dashboards", "Revenue charts", "Growth indicators", "Market data streams"]
         },
         {
           title: "AI Command Nexus",
           scene: "ai-command-nexus",
+          image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=85",
           background: "Holographic control room with floating AI screens, neural data streams, radar systems, and command panels.",
           elements: ["AI modules", "Analytics rings", "Radar systems", "Command panels"]
         },
         {
           title: "Infinite Horizon",
           scene: "infinite-horizon",
+          image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85",
           background: "Endless ocean horizon with futuristic structures, sunrise lighting, atmospheric fog, and reflection effects.",
           elements: ["Glass info panels", "Floating navigation", "Holographic projections", "Reflection layers"]
         },
         {
           title: "Quantum Vault",
           scene: "quantum-vault",
+          image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=85",
           background: "Massive digital vault in a premium finance environment with luxury black surfaces and a blue energy core.",
           elements: ["Security analytics", "Portfolio dashboards", "Market intelligence", "Vault HUD"]
         },
         {
           title: "Innovation Grid",
           scene: "innovation-grid",
+          image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=85",
           background: "Infinite digital grid with connected nodes, AI network visualization, data highways, and growth pathways.",
           elements: ["Product cards", "Connection diagrams", "Growth pathways", "Network nodes"]
         },
         {
           title: "Orion Protocol",
           scene: "orion-protocol",
+          image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=85",
           background: "Orbital command station with planetary views, deep-space visuals, and spacecraft-style control systems.",
           elements: ["Navigation displays", "Mission analytics", "Aerospace HUD", "Orbit maps"]
         },
         {
           title: "Black Diamond",
           scene: "black-diamond",
+          image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=85",
           background: "Luxury black crystal environment with reflective surfaces, premium lighting, and high-end corporate atmosphere.",
           elements: ["Floating glass cards", "Luxury metrics", "Elegant data", "Crystal reflections"]
         },
         {
           title: "AI Foundry",
           scene: "ai-foundry",
+          image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=85",
           background: "Digital manufacturing environment with AI-powered creation systems and product development visuals.",
           elements: ["Design systems", "Build pipelines", "Launch dashboards", "Assembly flow"]
         },
         {
           title: "Neural Network",
           scene: "neural-network",
+          image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=85",
           background: "Massive AI neural network with connected intelligence nodes and electric blue machine-learning streams.",
           elements: ["Brain structures", "Prediction systems", "AI analytics", "Intelligence maps"]
         }
@@ -986,6 +1020,15 @@
         const panelLabels = featured ? ["Global Network", "AI Command", "Software Ecosystem"] : asset.elements.slice(0, 3);
         return (
           <div className={`theme-scene ${asset.scene}`}>
+            {asset.image && (
+              <img
+                src={asset.image}
+                alt={`${asset.title} live cinematic technology visual`}
+                loading={featured ? "eager" : "lazy"}
+                decoding="async"
+              />
+            )}
+            <div className="image-shade"></div>
             <div className="scene-glow"></div>
             <div className="scene-core"></div>
             <div className="scene-bars" aria-hidden="true">
@@ -1016,6 +1059,7 @@
                 <CinematicScene featured asset={{
                   title: "Ortiz Venture Holdings",
                   scene: "ai-command-nexus",
+                  image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=85",
                   elements: ["AI command center", "Business analytics", "Global network"]
                 }} />
                 <div className="p-3 sm:p-6">
